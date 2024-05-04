@@ -1,0 +1,13 @@
+{
+  "name": "methepokemon",
+  "version": "1.0.0",
+  "description": "",
+  "main": "assemble_pokemon.js",
+  "type": "module",
+  "private": true,
+  "dependencies": {
+    "jquery": "^3.7.1",
+    "pokeapi-js-wrapper": "^1.2.4",
+    "pokedex-promise-v2": "^4.2.0"
+  }
+}

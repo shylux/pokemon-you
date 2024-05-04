@@ -1,0 +1,9 @@
+.container {
+  width: 800px;
+  margin: 0 auto;
+}
+
+.selector {
+  display: grid;
+  grid-template-columns: 10% 80% 10%;
+}
