@@ -61,13 +61,13 @@ $('#howami').click(() => {
 
 $('input[type=range]').on('input', function () {
   let stats = calcMyStats();
-  $('#total').next().text(stats.total);
-  $('#hp').next().text(stats.hp);
-  $('#attack').next().text(stats.attack);
-  $('#defense').next().text(stats.defense);
-  $('#special-attack').next().text(stats.specialAttack);
-  $('#special-defense').next().text(stats.specialDefense);
-  $('#speed').next().text(stats.speed);
+  $('.selected-stat-value.total').text(stats.total);
+  $('.selected-stat-value.hp').text(stats.hp);
+  $('.selected-stat-value.attack').text(stats.attack);
+  $('.selected-stat-value.defense').text(stats.defense);
+  $('.selected-stat-value.special-attack').text(stats.specialAttack);
+  $('.selected-stat-value.special-defense').text(stats.specialDefense);
+  $('.selected-stat-value.speed').text(stats.speed);
 }).trigger('input');
 
 init();

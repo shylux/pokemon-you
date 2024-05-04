@@ -1,3 +1,9 @@
+html, body {
+  margin: 0;
+  padding: 0;
+  font-family: sans-serif;
+}
+
 .container {
   width: 800px;
   margin: 0 auto;
@@ -5,6 +11,16 @@
 
 .selector {
   display: grid;
-  grid-template-columns: 10% 80% 10%;
+  grid-template-columns: 8fr 1fr;
+  align-items: center;
   row-gap: 1rem;
+}
+
+.selector div {
+  display: flex;
+  flex-direction: column;
+}
+
+.selected-stat-value {
+  vertical-align: center;
 }

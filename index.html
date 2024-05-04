@@ -26,30 +26,44 @@
 <div class="container">
   <h1>Which Pokémon are you?</h1>
   <div class="selector">
-    <label for="total">Total</label>
-    <input type="range" min="1" max="100" value="50" class="slider" id="total">
-    <span></span>
-    <label for="hp">HP - physical build, diet, hygiene<br/>State of your body.</label>
-    <input type="range" min="1" max="100" value="50" class="slider" id="hp">
-    <span></span>
-    <label for="attack">Attack - physical strength</label>
-    <input type="range" min="1" max="100" value="50" class="slider" id="attack">
-    <span></span>
-    <label for="defense">
-      Defense - reflexes, endurance<br/>
-      Your defensive ability that is not dependent on your body.
-      Everything you would still have if you switched into another body.</label>
-    <input type="range" min="1" max="100" value="50" class="slider" id="defense">
-    <span></span>
-    <label for="special-attack">Special Attack - performative abilities, knowledge</label>
-    <input type="range" min="1" max="100" value="50" class="slider" id="special-attack">
-    <span></span>
-    <label for="special-defense">Special Defense - mental fortitude, stress resilience</label>
-    <input type="range" min="1" max="100" value="50" class="slider" id="special-defense">
-    <span></span>
-    <label for="speed">Speed - reaction time, running speed</label>
-    <input type="range" min="1" max="100" value="50" class="slider" id="speed">
-    <span></span>
+    <div>
+      <label for="total">Stat Total</label>
+      <input type="range" min="1" max="1000" value="300" class="slider" id="total">
+    </div>
+    <span class="selected-stat-value total"></span>
+    <div>
+      <label for="hp">HP - physical build, diet, hygiene<br/>State of your body.</label>
+      <input type="range" min="1" max="100" value="50" class="slider" id="hp">
+    </div>
+    <span class="selected-stat-value hp"></span>
+    <div>
+      <label for="attack">Attack - physical strength</label>
+      <input type="range" min="1" max="100" value="50" class="slider" id="attack">
+    </div>
+    <span class="selected-stat-value attack"></span>
+    <div>
+      <label for="defense">
+        Defense - reflexes, endurance<br/>
+        Your defensive ability that is not dependent on your body.
+        Everything you would still have if you switched into another body.</label>
+      <input type="range" min="1" max="100" value="50" class="slider" id="defense">
+    </div>
+    <span class="selected-stat-value defense"></span>
+    <div>
+      <label for="special-attack">Special Attack - performative abilities, knowledge</label>
+      <input type="range" min="1" max="100" value="50" class="slider" id="special-attack">
+    </div>
+    <span class="selected-stat-value special-attack"></span>
+    <div>
+      <label for="special-defense">Special Defense - mental fortitude, stress resilience</label>
+      <input type="range" min="1" max="100" value="50" class="slider" id="special-defense">
+    </div>
+    <span class="selected-stat-value special-defense"></span>
+    <div>
+      <label for="speed">Speed - reaction time, running speed</label>
+      <input type="range" min="1" max="100" value="50" class="slider" id="speed">
+    </div>
+    <span class="selected-stat-value speed"></span>
   </div>
   <button type="button" id="howami">Who am I?</button>
   <div id="result">
