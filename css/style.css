@@ -1,3 +1,61 @@
+/*
+$colors: (
+  "hp": (
+    "base": #69DC12,
+    "border": #448F0C,
+    "background": #9EE865,
+  ),
+  "attack": (
+    "base": #EFCC18,
+    "border": #9B8510,
+    "background": #F5DE69,
+  ),
+  "defense": (
+    "base": #E86412,
+    "border": #97410C,
+    "background": #F09A65,
+  ),
+  "special-attack": (
+    "base": #14C3F1,
+    "border": #0D7F9D,
+    "background": #66D8F6,
+  ),
+  "special-defense": (
+    "base": #4A6ADF,
+    "border": #304591,
+    "background": #899EEA,
+  ),
+  "speed": (
+    "base": #D51DAD,
+    "border": #8B1370,
+    "background": #E46CCA,
+  ),
+);
+*/
+
+:root {
+  --color-card-background: #B8C26A;
+  --color-card-border: #726E54;
+  --color-hp: #69DC12;
+  --color-attack: #EFCC18;
+  --color-defense: #E86412;
+  --color-special-attack: #14C3F1;
+  --color-special-defense: #4A6ADF;
+  --color-speed: #D51DAD;
+  --color-hp-border: #448F0C;
+  --color-attack-border: #9B8510;
+  --color-defense-border: #97410C;
+  --color-special-attack-border: #0D7F9D;
+  --color-special-defense-border: #304591;
+  --color-speed-border: #8B1370;
+  --color-hp-background: #9EE865;
+  --color-attack-background: #F5DE69;
+  --color-defense-background: #F09A65;
+  --color-special-attack-background: #66D8F6;
+  --color-special-defense-background: #899EEA;
+  --color-speed-background: #E46CCA;
+}
+
 html, body {
   margin: 0;
   padding: 0;
@@ -9,6 +67,7 @@ html, body {
   margin: 0 auto;
 }
 
+/** selector **/
 .selector {
   display: grid;
   grid-template-columns: 8fr 1fr;
@@ -23,4 +82,168 @@ html, body {
 
 .selected-stat-value {
   vertical-align: center;
+}
+
+/** result **/
+.pokemon-card {
+  max-width: 500px;
+  margin: 2rem auto;
+  font-weight: bold;
+  display: grid;
+  grid-template-columns: 2fr auto 3fr;
+  grid-template-rows: 2fr repeat(6, 1fr);
+  align-items: center;
+  flex-shrink: 1;
+  grid-template-areas:
+    "name name name"
+    "img stat-number-hp stat-bar-hp"
+    "img stat-number-attack stat-bar-attack"
+    "img stat-number-defense stat-bar-defense"
+    "img stat-number-special-attack stat-bar-special-attack"
+    "img stat-number-special-defense stat-bar-special-defense"
+    "img stat-number-speed stat-bar-speed";
+
+  background-color: var(--color-card-background);
+  border: 3px solid var(--color-card-border);
+  border-radius: 15px;
+  overflow: hidden;
+}
+
+.pokemon-card .name {
+  font-size: 2rem;
+  padding-left: 1rem;
+}
+
+.pokemon-card .stat-number {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: .4rem;
+  padding: 0 .2rem;
+  height: 100%;
+}
+
+.pokemon-card .stat-bar {
+  --stat-bar-height: 2rem;
+  height: var(--stat-bar-height);
+}
+
+.pokemon-card .stat-bar-inner {
+  --stat-bar-height-inner: 1.5rem;
+  box-sizing: border-box;
+  border: 1px solid;
+  height: var(--stat-bar-height-inner);
+  margin-top: calc((var(--stat-bar-height) - var(--stat-bar-height-inner)) / 2);
+}
+
+/** Grid Assignments **/
+.pokemon-card .name {
+  grid-area: name;
+}
+
+.pokemon-card img {
+  grid-area: img;
+  max-height: 150px;
+}
+
+.pokemon-card .stat-number.hp {
+  grid-area: stat-number-hp
+}
+
+.pokemon-card .hp {
+  background-color: var(--color-hp-background);
+}
+
+.pokemon-card .hp .stat-bar-inner {
+  background-color: var(--color-hp);
+  border-color: var(--color-hp-border);
+}
+
+.pokemon-card .attack {
+  background-color: var(--color-attack-background);
+}
+
+.pokemon-card .attack .stat-bar-inner {
+  background-color: var(--color-attack);
+  border-color: var(--color-attack-border);
+}
+
+.pokemon-card .defense {
+  background-color: var(--color-defense-background);
+}
+
+.pokemon-card .defense .stat-bar-inner {
+  background-color: var(--color-defense);
+  border-color: var(--color-defense-border);
+}
+
+.pokemon-card .special-attack {
+  background-color: var(--color-special-attack-background);
+}
+
+.pokemon-card .special-attack .stat-bar-inner {
+  background-color: var(--color-special-attack);
+  border-color: var(--color-special-attack-border);
+}
+
+.pokemon-card .special-defense {
+  background-color: var(--color-special-defense-background);
+}
+
+.pokemon-card .special-defense .stat-bar-inner {
+  background-color: var(--color-special-defense);
+  border-color: var(--color-special-defense-border);
+}
+
+.pokemon-card .speed {
+  background-color: var(--color-speed-background);
+}
+
+.pokemon-card .speed .stat-bar-inner {
+  background-color: var(--color-speed);
+  border-color: var(--color-speed-border);
+}
+
+.pokemon-card .stat-bar.hp {
+  grid-area: stat-bar-hp
+}
+
+.pokemon-card .stat-number.attack {
+  grid-area: stat-number-attack
+}
+
+.pokemon-card .stat-bar.attack {
+  grid-area: stat-bar-attack
+}
+
+.pokemon-card .stat-number.defense {
+  grid-area: stat-number-defense
+}
+
+.pokemon-card .stat-bar.defense {
+  grid-area: stat-bar-defense
+}
+
+.pokemon-card .stat-number.special-attack {
+  grid-area: stat-number-special-attack
+}
+
+.pokemon-card .stat-bar.special-attack {
+  grid-area: stat-bar-special-attack
+}
+
+.pokemon-card .stat-number.special-defense {
+  grid-area: stat-number-special-defense
+}
+
+.pokemon-card .stat-bar.special-defense {
+  grid-area: stat-bar-special-defense
+}
+
+.pokemon-card .stat-number.speed {
+  grid-area: stat-number-speed
+}
+
+.pokemon-card .stat-bar.speed {
+  grid-area: stat-bar-speed
 }

@@ -28,7 +28,7 @@
   <div class="selector">
     <div>
       <label for="total">Stat Total</label>
-      <input type="range" min="1" max="1000" value="300" class="slider" id="total">
+      <input type="range" min="175" max="780" value="300" class="slider" id="total">
     </div>
     <span class="selected-stat-value total"></span>
     <div>
@@ -66,11 +66,60 @@
     <span class="selected-stat-value speed"></span>
   </div>
   <button type="button" id="howami">Who am I?</button>
-  <div id="result">
+  <div id="results">
     <h2>You are a <span class="result-name"></span></h2>
     <img class="result-img" src="" alt=""/>
   </div>
 </div>
+
+<template id="result-template">
+  <div class="pokemon-card">
+    <span class="name"></span>
+    <img src="" alt=""/>
+    <div class="stat-number hp">
+      <span class="stat-name">HP</span>
+      <span class="stat-value"></span>
+    </div>
+    <div class="stat-bar hp">
+      <div class="stat-bar-inner"></div>
+    </div>
+    <div class="stat-number attack">
+      <span class="stat-name">Attack</span>
+      <span class="stat-value"></span>
+    </div>
+    <div class="stat-bar attack">
+      <div class="stat-bar-inner"></div>
+    </div>
+    <div class="stat-number defense">
+      <span class="stat-name">Defense</span>
+      <span class="stat-value"></span>
+    </div>
+    <div class="stat-bar defense">
+      <div class="stat-bar-inner"></div>
+    </div>
+    <div class="stat-number special-attack">
+      <span class="stat-name">Sp. Atk.</span>
+      <span class="stat-value"></span>
+    </div>
+    <div class="stat-bar special-attack">
+      <div class="stat-bar-inner"></div>
+    </div>
+    <div class="stat-number special-defense">
+      <span class="stat-name">Sp. Def.</span>
+      <span class="stat-value"></span>
+    </div>
+    <div class="stat-bar special-defense">
+      <div class="stat-bar-inner"></div>
+    </div>
+    <div class="stat-number speed">
+      <span class="stat-name">Speed</span>
+      <span class="stat-value"></span>
+    </div>
+    <div class="stat-bar speed">
+      <div class="stat-bar-inner"></div>
+    </div>
+  </div>
+</template>
 
 <script src="js/vendor/jquery-3.7.1.min.js"></script>
 <script src="js/app.js" type="module"></script>

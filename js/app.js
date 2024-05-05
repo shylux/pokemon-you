@@ -3,18 +3,18 @@ import PriorityQueue from "./priorityQueue.js";
 
 let pokedex = await $.getJSON('pokemon.json');
 
-function init() {
-  let maxTotal = 0, minTotal = 2000;
-  for (const pokemon of pokedex) {
-    if (pokemon.stats.total > maxTotal) {
-      maxTotal = pokemon.stats.total;
-    }
-    if (pokemon.stats.total < minTotal) {
-      minTotal = pokemon.stats.total;
-    }
-  }
-  $('#total').attr('min', minTotal).attr('max', maxTotal);
-}
+// function init() {
+//   let maxTotal = 0, minTotal = 2000;
+//   for (const pokemon of pokedex) {
+//     if (pokemon.stats.total > maxTotal) {
+//       maxTotal = pokemon.stats.total;
+//     }
+//     if (pokemon.stats.total < minTotal) {
+//       minTotal = pokemon.stats.total;
+//     }
+//   }
+//   $('#total').attr('min', minTotal).attr('max', maxTotal);
+// }
 
 function calcMyStats() {
   // calculate your stat total
@@ -38,6 +38,26 @@ function calcMyStats() {
   }
 }
 
+function buildPokemonCard(pokemon) {
+  let template = $($('#result-template').html());
+  let cssWidth = 'calc(stat/255 * 100%)';
+  $('.name', template).text(pokemon.name);
+  $('img', template).attr('src', pokemon.officalArtwork).attr('alt', pokemon.name);
+  $('.stat-number.hp .stat-value', template).text(pokemon.stats.hp);
+  $('.hp .stat-bar-inner', template).css('width', cssWidth.replace('stat', pokemon.stats.hp));
+  $('.stat-number.attack .stat-value', template).text(pokemon.stats.attack);
+  $('.attack .stat-bar-inner', template).css('width', cssWidth.replace('stat', pokemon.stats.attack));
+  $('.stat-number.defense .stat-value', template).text(pokemon.stats.defense);
+  $('.defense .stat-bar-inner', template).css('width', cssWidth.replace('stat', pokemon.stats.defense));
+  $('.stat-number.special-attack .stat-value', template).text(pokemon.stats['special-attack']);
+  $('.special-attack .stat-bar-inner', template).css('width', cssWidth.replace('stat', pokemon.stats['special-attack']));
+  $('.stat-number.special-defense .stat-value', template).text(pokemon.stats['special-defense']);
+  $('.special-defense .stat-bar-inner', template).css('width', cssWidth.replace('stat', pokemon.stats['special-defense']));
+  $('.stat-number.speed .stat-value', template).text(pokemon.stats.speed);
+  $('.speed .stat-bar-inner', template).css('width', cssWidth.replace('stat', pokemon.stats.speed));
+  return template;
+}
+
 $('#howami').click(() => {
   let stats = calcMyStats();
 
@@ -56,7 +76,8 @@ $('#howami').click(() => {
 
   let result = matchingList.dequeue().node;
   $('.result-name').text(result.name);
-  $('.result-img').attr('src', result.officalArtwork).attr('alt', result.name);
+  // $('.result-img').attr('src', result.officalArtwork).attr('alt', result.name);
+  $('#results').append(buildPokemonCard(result));
 });
 
 $('input[type=range]').on('input', function () {
@@ -70,4 +91,4 @@ $('input[type=range]').on('input', function () {
   $('.selected-stat-value.speed').text(stats.speed);
 }).trigger('input');
 
-init();
+$('#howami').click();
