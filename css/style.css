@@ -85,7 +85,8 @@ html, body {
 }
 
 .selected-stat-value {
-  vertical-align: center;
+  justify-self: center;
+  align-self: end;
 }
 
 .selector input[type="range"] {
@@ -161,6 +162,13 @@ html, body {
 
 #speed::-webkit-slider-thumb {
   background-image: url('/img/quickball.png');
+}
+
+#howami {
+  margin-top: 1rem;
+  padding: .5rem;
+  font-weight: bold;
+  cursor: pointer;
 }
 
 /****

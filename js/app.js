@@ -41,7 +41,7 @@ function calcMyStats() {
 function buildPokemonCard(pokemon) {
   let template = $($('#result-template').html());
   let cssWidth = 'calc(stat/255 * 100%)';
-  $('.name', template).text(pokemon.name);
+  $('.name', template).text(pokemon.names.en);
   $('img', template).attr('src', pokemon.officalArtwork).attr('alt', pokemon.name);
   $('.stat-number.hp .stat-value', template).text(pokemon.stats.hp);
   $('.hp .stat-bar-inner', template).css('width', cssWidth.replace('stat', pokemon.stats.hp));
@@ -94,5 +94,3 @@ $('input[type=range]').on('input', function () {
   $('.selected-stat-value.special-defense').text(stats.specialDefense);
   $('.selected-stat-value.speed').text(stats.speed);
 }).trigger('input');
-
-$('#howami').click();

@@ -4,19 +4,18 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title></title>
+  <title>Which Pokémon are you?</title>
   <link rel="stylesheet" href="css/style.css">
-  <meta name="description" content="">
+  <meta name="description" content="Enter your real world stats and find out which pokémon you would be.">
 
-  <meta property="og:title" content="">
+  <meta property="og:title" content="Which Pokémon are you?">
+  <meta property="og:description" content="Enter your real world stats and find out which pokémon you would be.">
   <meta property="og:type" content="">
-  <meta property="og:url" content="">
-  <meta property="og:image" content="">
-  <meta property="og:image:alt" content="">
+  <meta property="og:url" content="https://shylux.github.io/">
+  <meta property="og:image" content="/img/pokeball.png">
 
-  <link rel="icon" href="/favicon.ico" sizes="any">
-  <link rel="icon" href="/icon.svg" type="image/svg+xml">
-  <link rel="apple-touch-icon" href="icon.png">
+  <link rel="icon" href="/img/pokeball.png" sizes="any">
+  <link rel="apple-touch-icon" href="/img/pokeball.png">
 
   <!--  <link rel="manifest" href="site.webmanifest">-->
   <meta name="theme-color" content="#B8C26A">
@@ -33,46 +32,46 @@
   <h1>Which Pokémon are you?</h1>
   <div class="selector">
     <div>
-      <label for="total">Stat Total - life experience</label>
+      <label for="total"><b>Stat Total</b> - life experience</label>
       <input type="range" min="175" max="780" value="300" class="slider" id="total">
     </div>
     <span class="selected-stat-value total"></span>
     <div>
-      <label for="hp">HP - physical build, diet, hygiene<br/>State of your body.</label>
+      <label for="hp"><b>HP</b> - physical build, diet, hygiene<br/>State of your body.</label>
       <input type="range" min="1" max="100" value="50" class="slider" id="hp">
     </div>
     <span class="selected-stat-value hp"></span>
     <div>
-      <label for="attack">Attack - physical strength</label>
+      <label for="attack"><b>Attack</b> - physical strength</label>
       <input type="range" min="1" max="100" value="50" class="slider" id="attack">
     </div>
     <span class="selected-stat-value attack"></span>
     <div>
       <label for="defense">
-        Defense - reflexes, endurance<br/>
+        <b>Defense</b> - reflexes, endurance<br/>
         Your defensive ability that is not dependent on your body.
         Everything you would still have if you switched into another body.</label>
       <input type="range" min="1" max="100" value="50" class="slider" id="defense">
     </div>
     <span class="selected-stat-value defense"></span>
     <div>
-      <label for="special-attack">Special Attack - performative abilities, knowledge</label>
+      <label for="special-attack"><b>Special Attack</b> - performative abilities, knowledge</label>
       <input type="range" min="1" max="100" value="50" class="slider" id="special-attack">
     </div>
     <span class="selected-stat-value special-attack"></span>
     <div>
-      <label for="special-defense">Special Defense - mental fortitude, stress resilience</label>
+      <label for="special-defense"><b>Special Defense</b> - mental fortitude, stress resilience</label>
       <input type="range" min="1" max="100" value="50" class="slider" id="special-defense">
     </div>
     <span class="selected-stat-value special-defense"></span>
     <div>
-      <label for="speed">Speed - reaction time, running speed</label>
+      <label for="speed"><b>Speed</b> - reaction time, running speed</label>
       <input type="range" min="1" max="100" value="50" class="slider" id="speed">
     </div>
     <span class="selected-stat-value speed"></span>
   </div>
   <button type="button" id="howami">Who am I?</button>
-  <div id="results">
+  <div id="results" style="display: none">
     <h2>You are a...</h2>
     <div id="main-result"></div>
     <h3>Other results:</h3>
