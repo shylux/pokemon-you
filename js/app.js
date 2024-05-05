@@ -74,10 +74,14 @@ $('#howami').click(() => {
     matchingList.enqueue(pokemon, error);
   }
 
-  let result = matchingList.dequeue().node;
-  $('.result-name').text(result.name);
-  // $('.result-img').attr('src', result.officalArtwork).attr('alt', result.name);
-  $('#results').append(buildPokemonCard(result));
+  $('#main-result, #other-results').empty();
+  let mainResult = matchingList.dequeue().node;
+  $('#main-result').append(buildPokemonCard(mainResult));
+  for (let step = 0; step < 5; step++) {
+    let result = matchingList.dequeue().node;
+    $('#other-results').append(buildPokemonCard(result))
+  }
+  $('#results').show();
 });
 
 $('input[type=range]').on('input', function () {

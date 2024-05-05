@@ -59,7 +59,7 @@ $colors: (
 html, body {
   margin: 0;
   padding: 0;
-  font-family: sans-serif;
+  font-family: "Roboto", sans-serif;
 }
 
 .container {
@@ -67,7 +67,11 @@ html, body {
   margin: 0 auto;
 }
 
-/** selector **/
+/****
+ *
+ *     Selector     *
+                    *
+                 ****/
 .selector {
   display: grid;
   grid-template-columns: 8fr 1fr;
@@ -84,9 +88,88 @@ html, body {
   vertical-align: center;
 }
 
-/** result **/
+.selector input[type="range"] {
+  appearance: none;
+  width: 100%;
+  height: .5rem;
+  border-radius: .25rem;
+  background-color: lightgray;
+  border: 1px solid gray;
+}
+
+.selector input[type="range"]::-webkit-slider-thumb {
+  appearance: none;
+  width: 1rem;
+  height: 1rem;
+  image-rendering: pixelated;
+  background-image: url('/img/pokeball.png');
+  background-size: contain;
+  background-position: center center;
+  background-repeat: no-repeat;
+  cursor: pointer;
+}
+
+#hp {
+  background-color: var(--color-hp);
+  border-color: var(--color-hp-border);
+}
+
+#hp::-webkit-slider-thumb {
+  background-image: url('/img/healball.png');
+}
+
+#attack {
+  background-color: var(--color-attack);
+  border-color: var(--color-attack-border);
+}
+
+#attack::-webkit-slider-thumb {
+  background-image: url('/img/ultraball.png');
+}
+
+#defense {
+  background-color: var(--color-defense);
+  border-color: var(--color-defense-border);
+}
+
+#defense::-webkit-slider-thumb {
+  background-image: url('/img/heavyball.png');
+}
+
+#special-attack {
+  background-color: var(--color-special-attack);
+  border-color: var(--color-special-attack-border);
+}
+
+#special-attack::-webkit-slider-thumb {
+  background-image: url('/img/moonball.png');
+}
+
+#special-defense {
+  background-color: var(--color-special-defense);
+  border-color: var(--color-special-defense-border);
+}
+
+#special-defense::-webkit-slider-thumb {
+  background-image: url('/img/diveball.png');
+}
+
+#speed {
+  background-color: var(--color-speed);
+  border-color: var(--color-speed-border);
+}
+
+#speed::-webkit-slider-thumb {
+  background-image: url('/img/quickball.png');
+}
+
+/****
+ *
+ *     Result     *
+                  *
+               ****/
 .pokemon-card {
-  max-width: 500px;
+  max-width: 400px;
   margin: 2rem auto;
   font-weight: bold;
   display: grid;
@@ -109,9 +192,17 @@ html, body {
   overflow: hidden;
 }
 
+#main-result .pokemon-card {
+  max-width: 600px;
+}
+
 .pokemon-card .name {
   font-size: 2rem;
   padding-left: 1rem;
+}
+
+.pokemon-card img {
+  justify-self: center;
 }
 
 .pokemon-card .stat-number {
